@@ -1,0 +1,50 @@
+/* tampilan mobile */
+.container{
+    background-color: #4361ee;
+    padding: 1rem;
+    color: #fff;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar__brand{
+    margin-bottom: 1rem;
+    font-size: 2.4rem;
+}
+
+.navbar__list{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.navbar__item{
+    margin-bottom: 1rem;
+}
+
+
+/* tampilan table */
+@media(min-width:768px){
+    .navbar{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .navbar__brand{
+        margin-bottom: 0px;
+    }
+    .navbar__list{
+        flex-direction: row;
+    }
+    .navbar__item{
+        margin: 0 1rem;
+    }
+}
+/* tampilan dekstop */
+
+@media(min-width:998px){
+    
+}

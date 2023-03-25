@@ -1,9 +1,9 @@
-import {Main} from "./MainImport/AllImport"
-import './App.css';
 
 function App() {
   return (
-    <Main/>
+    <div>
+      <h2>Movie Apps</h2>
+    </div>
   );
 }
 
