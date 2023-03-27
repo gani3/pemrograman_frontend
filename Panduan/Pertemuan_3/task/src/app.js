@@ -13,7 +13,7 @@ import { formatUser, findByName, filterByMajor } from "./controllers/UserControl
  */
 (async () => {
   console.log("# Format User: Mr/Mrs");
-  const resultFormatUsers = await formatUser("Mr/Mrs");
+  const resultFormatUsers = await formatUser("Mr/Mrs ");
   console.log(resultFormatUsers);
 
   console.log("\n# Find User by Name: Aufa");
