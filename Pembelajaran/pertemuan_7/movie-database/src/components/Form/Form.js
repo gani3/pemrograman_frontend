@@ -8,9 +8,12 @@ function Form(props) {
 
     const [title,setTitle] = useState('')
     const [date,setDate] = useState('')
+    const [poster,setPoster] = useState('')
+    const [type,setType] = useState('')
     const [title_error,setTitleError] = useState(false)
     const [date_error,setDateError] = useState(false)
-
+    
+    
     function hanldeSubmit(e) {
         e.preventDefault()
         if (title === '') {
@@ -22,7 +25,7 @@ function Form(props) {
                 id : nanoid(10),
                 title : title,
                 year : date,
-                type : "Movie",
+                type : type,
                 poster : "https://picsum.photos/300/400"
             }
             setFilm([...film,movie])
@@ -45,9 +48,24 @@ function Form(props) {
                     <input className={styles.input__text} type="text" value={title} onChange={e=>setTitle(e.target.value)}/>
                     <p>{title_error ? <Alert>Wajib di isi</Alert> : ""}</p>
                 </div>
-                <div className={styles.input__date}>
+                <div className={styles.input__title}>
                     <h5 className={styles.input__label}>Year</h5>
                     <input className={styles.input__text} type="number" value={date} onChange={e=>setDate(e.target.value)}/>
+                    <p>{title_error ? <Alert>Wajib di isi</Alert> : ""}</p>
+                </div>
+                <div className={styles.input__title}>
+                    <h5 className={styles.input__label}>Image</h5>
+                    <input className={styles.input__text} type="text" value={poster} onChange={e=>setPoster(e.target.value)}/>
+                    <p>{title_error ? <Alert>Wajib di isi</Alert> : ""}</p>
+                </div>
+                <div className={styles.input__date}>
+                    <h5 className={styles.input__label}>Type</h5>
+                    <select className={styles.input__text} value={type} onChange={e=>setType(e.target.value)}>
+                        <option value="Action">Action</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Horor">Horor</option>
+                        <option value="Comedy">Comedy</option>
+                    </select>
                     <p>{date_error ? <Alert>Wajib di isi</Alert> : ""}</p>
                 </div>
                 <div className={styles.input__date}>
