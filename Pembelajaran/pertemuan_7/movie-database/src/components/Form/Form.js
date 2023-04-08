@@ -26,7 +26,7 @@ function Form(props) {
                 title : title,
                 year : date,
                 type : type,
-                poster : "https://picsum.photos/300/400"
+                poster : poster,
             }
             setFilm([...film,movie])
             setDateError(false)
