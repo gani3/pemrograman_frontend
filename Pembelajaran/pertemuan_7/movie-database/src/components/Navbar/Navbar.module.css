@@ -25,6 +25,16 @@
     margin-bottom: 1rem;
 }
 
+.navbar__item a{
+ color: white;
+ text-decoration: none;
+}
+
+.navbar__item a:hover{
+    color: white;
+    text-decoration: underline;
+   }
+
 
 /* tampilan table */
 @media(min-width:768px){

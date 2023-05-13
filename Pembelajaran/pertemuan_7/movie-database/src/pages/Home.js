@@ -1,7 +1,5 @@
 import { useState } from "react"
 import {
-    Navbar,
-    Footer,
     Hero,
     Movies,
     Form,
@@ -12,11 +10,9 @@ function Home(props) {
     const [film , setFilm] = useState(DataMovie)
     return(
         <div>
-            <Navbar/>
             <Hero/>
                 <Movies film={film}/>
                 <Form film={film} setFilm={setFilm}/>
-            <Footer/>
         </div>
     )
 }
