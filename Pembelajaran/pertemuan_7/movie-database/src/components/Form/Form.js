@@ -14,6 +14,8 @@ function Form(props) {
     })
 
     const [title_error,setTitleError] = useState(false)
+    const [poster_error,setPosterError] = useState(false)
+    const [type_error,setTypeError] = useState(false)
     const [date_error,setDateError] = useState(false)
     
     
@@ -23,14 +25,11 @@ function Form(props) {
             setTitleError(true)
         } else if (formData.year === '') {
             setDateError(true)
+        }else if (formData.poster === '') {
+            setPosterError(true)
+        }else if (formData.type === '') {
+            setTypeError(true)
         }else{
-            // const movie = {
-            //     id : nanoid(10),
-            //     title : title,
-            //     year : date,
-            //     type : type,
-            //     poster : poster,
-            // }
             setFilm([...film,formData])
             setDateError(false)
             setTitleError(false)
@@ -80,14 +79,14 @@ function Form(props) {
                 <div className={styles.input__title}>
                     <h5 className={styles.input__label}>Year</h5>
                     <input className={styles.input__text} type="number" value={formData.year} onChange={e=>handleOnchange(e)} name="year"/>
-                    <p>{title_error ? <Alert>Wajib di isi</Alert> : ""}</p>
+                    <p>{date_error ? <Alert>Wajib di isi</Alert> : ""}</p>
                 </div>
                 <div className={styles.input__title}>
                     <h5 className={styles.input__label}>Image</h5>
                     <input className={styles.input__text} type="text" value={formData.poster} onChange={e=>handleOnchange(e)} name="poster"/>
-                    <p>{title_error ? <Alert>Wajib di isi</Alert> : ""}</p>
+                    <p>{poster_error ? <Alert>Wajib di isi</Alert> : ""}</p>
                 </div>
-                <div className={styles.input__date}>
+                <div className={styles.input__title}>
                     <h5 className={styles.input__label}>Type</h5>
                     <select className={styles.input__text} value={formData.type} onChange={e=>handleOnchange(e)} name="type">
                         <option value="">Type Movie</option>
@@ -96,7 +95,7 @@ function Form(props) {
                         <option value="Horor">Horor</option>
                         <option value="Comedy">Comedy</option>
                     </select>
-                    <p>{date_error ? <Alert>Wajib di isi</Alert> : ""}</p>
+                    <p>{type_error ? <Alert>Wajib di isi</Alert> : ""}</p>
                 </div>
                 <div className={styles.input__date}>
                     <button type="submit" className={styles.button__submit}>Submit</button>
