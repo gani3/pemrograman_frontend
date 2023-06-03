@@ -21,19 +21,19 @@
 .hero__genre{
     color:#b5179e;
     margin-bottom: 1rem;
-    font-size: 1.59rem;
+    font-size: 1.35rem;
 }
 
 .hero__description{
     color: #64748b;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    text-align: justify;
 }
 
 .hero__image{
     max-width: 100%;
     height: auto;
     border-radius: 25px;
-    margin-left: 200px;
     align-items: center;
 }
 
@@ -54,10 +54,18 @@
         text-align: left;
     }
     .hero__left{
-        flex-basis: 40%;
+        flex-basis: 50%;
     }
     .hero__right{
-        flex-basis: 60%;
+        flex-basis: 50%;
+        align-items: center;
+    }
+
+    .hero__image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 25px;
+        margin-left: 200px;
         align-items: center;
     }
 }

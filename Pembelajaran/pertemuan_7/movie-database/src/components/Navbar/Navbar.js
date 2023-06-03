@@ -1,6 +1,6 @@
+import React from "react"
 import { Link } from "react-router-dom"
 import styles from "./Navbar.module.css"
-
 function Navbar(params) {
     return(
         <div className={styles.container}>
@@ -15,8 +15,8 @@ function Navbar(params) {
                             <Link to='/movie/AddMovie'>Add Movie</Link>
                         </li>
                         <li className={styles.navbar__item}>
-                        <Link to='/movie/Populer'>Populer</Link>
-                         </li>
+                             <Link to='/movie/Populer'>Populer</Link>
+                        </li>
                         <li className={styles.navbar__item}>
                             <Link to='/movie/NowPlaying'>Now Playing</Link>
                         </li>

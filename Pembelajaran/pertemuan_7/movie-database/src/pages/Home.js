@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import {
     Hero,
     Movies,
@@ -11,7 +11,7 @@ function Home(props) {
     return(
         <div>
             <Hero/>
-                <Movies film={film}/>
+                <Movies film={film} title={"Latest Movie"}/>
                 <Form film={film} setFilm={setFilm}/>
         </div>
     )

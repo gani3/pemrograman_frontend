@@ -1,7 +1,8 @@
-import {useState} from "react"
+import React,{useState} from "react"
 import styles from "./Form.module.css"
 import { nanoid } from "nanoid"
 import Alert from "../Alert/Alert"
+import Button from "../Ui/Button/Button"
 
 function Form(props) {
     const {film,setFilm} = props
@@ -98,7 +99,8 @@ function Form(props) {
                     <p>{type_error ? <Alert>Wajib di isi</Alert> : ""}</p>
                 </div>
                 <div className={styles.input__date}>
-                    <button type="submit" className={styles.button__submit}>Submit</button>
+                    <Button variant="success" full>Submit</Button>
+                    {/* <button type="submit" className={styles.button__submit}>Submit</button> */}
                 </div>
             </form>
            </div>
