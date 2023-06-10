@@ -24,7 +24,6 @@ function Hero(params) {
     const Genre = async (id) =>{
         const response = await axios(`https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}&append_to_response=videos`);
         setGenre(response.data.genres)
-        console.log(response.data);
         setTrailer(`https://www.youtube.com/watch?v=${response.data.videos.results[0].key}`)
         
 

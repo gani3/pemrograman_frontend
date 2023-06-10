@@ -10,6 +10,7 @@ import {Routes, Route } from "react-router-dom";
 import BaseLayouts from "./components/BaseLayout";
 import { ThemeProvider } from "styled-components";
 import theme from "./utils/constants/theme";
+import Detail from "./pages/movie/Detail";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/movie/Populer" element={<Populer/>} />
           <Route path="/movie/NowPlaying" element={<NowPlaying/>} />
           <Route path="/movie/TopRated" element={<TopRated/>} />
+          <Route path="/movie/:movieId" element={<Detail/>} />
         </Routes>
       </BaseLayouts>
     </ThemeProvider>

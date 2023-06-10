@@ -7,7 +7,9 @@ export {default as Form} from "../components/Form/Form"
 export {default as Movie} from "../components/Movie/Movie"
 export {default as DataMovie} from "../utils/constants/data"
 export {default as BaseLayouts} from "../components/BaseLayout"
+export {default as DetailMovie} from "../components/DetailMovie/DetailMovie"
 
+export {default as EndPoint } from "../utils/constants/EndPoints"
 
 // import folder csspage
 export {default as CssHome} from "../components/CssPage/Home.module.css"
