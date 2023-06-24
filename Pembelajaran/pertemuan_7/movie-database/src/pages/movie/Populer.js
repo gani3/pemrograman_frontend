@@ -1,21 +1,23 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect} from "react"
 import axios from 'axios';
 import { Hero, Movies,EndPoint } from "../../MainImport/AllImport";
+import { useDispatch } from "react-redux";
+import { updateMovie } from "../../feature/movieSlice";
 export default function Populer(){
-    const [film,setFilm] = useState([]);
+    const dispacth = useDispatch()
     useEffect(() => {
         getData()
     },[])
 
     const getData = async () =>{
         const response = await axios(EndPoint.POPULAR);
-        setFilm(response.data.results)
+        dispacth(updateMovie(response.data.results))
     }
 
     return(
         <div>
             <Hero/>
-            <Movies film={film} title={'POPULER MOVIE'} />
+            <Movies  title={'POPULER MOVIE'} />
         </div>
     )
 }

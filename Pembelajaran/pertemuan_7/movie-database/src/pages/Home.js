@@ -1,18 +1,26 @@
-import React, { useState } from "react"
+import React, { useEffect } from "react"
 import {
+    DataMovie,
     Hero,
     Movies,
-    Form,
-    DataMovie,
 } from "../MainImport/AllImport"
+import { useDispatch } from "react-redux"
+import { updateMovie } from "../feature/movieSlice"
 
 function Home(props) {
-    const [film , setFilm] = useState(DataMovie)
+    const dispatch = useDispatch()
+    useEffect(()=>{
+        getData()
+    },[])
+
+    const getData = () =>{
+        dispatch(updateMovie(DataMovie))
+    }
+
     return(
         <div>
             <Hero/>
-                <Movies film={film} title={"Latest Movie"}/>
-                <Form film={film} setFilm={setFilm}/>
+                <Movies title={"Latest Movie"}/>
         </div>
     )
 }

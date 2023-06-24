@@ -1,23 +1,24 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import { Movies,EndPoint } from "../../MainImport/AllImport";
+import { useDispatch } from "react-redux";
+import { updateMovie } from "../../feature/movieSlice";
 
 export default function NowPlaying(){
-
-    const [playNow, setplayNow] = useState([]);
+    const dispatch = useDispatch()
     useEffect(()=>{
         getPlay()
     },[])
 
     const getPlay = async () =>{
         const response = await axios(EndPoint.NOWPLAYING)
-        setplayNow(response.data.results)
+        dispatch(updateMovie(response.data.results))
     }
 
     return(
         <>
         <div>
-            <Movies film={playNow} title={`NOW PLAYING`} />
+            <Movies  title={`NOW PLAYING`} />
         </div>
         </>
     )

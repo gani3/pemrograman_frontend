@@ -3,16 +3,23 @@ import styles from "./Form.module.css"
 import { nanoid } from "nanoid"
 import Alert from "../Alert/Alert"
 import Button from "../Ui/Button/Button"
+import { useNavigate } from "react-router-dom"
+// import { addMovies } from "../../feature/movieSlice"
+import { useDispatch } from "react-redux"
+import { addMovies } from "../../feature/movieSlice"
+// import { addMovies } from "../../feature/movieSlice"
 
 function Form(props) {
+    const dispatch = useDispatch();
+    const redirect = useNavigate();
     const {film,setFilm} = props
-    const [formData , setFormData] = useState({
+    const [formData , setFormData] = useState([{
         id : nanoid(10),
         title : '',
         year : '',
         type : '',
         poster : '',
-    })
+    }])
 
     const [title_error,setTitleError] = useState(false)
     const [poster_error,setPosterError] = useState(false)
@@ -35,6 +42,8 @@ function Form(props) {
             setDateError(false)
             setTitleError(false)
             reset_elm()
+            dispatch(addMovies(formData))
+            redirect('/')
         }
     }
 

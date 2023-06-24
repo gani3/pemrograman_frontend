@@ -1,21 +1,22 @@
 import axios from "axios"
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import { EndPoint, Movies } from "../../MainImport/AllImport";
+import { useDispatch } from "react-redux";
+import { updateMovie } from "../../feature/movieSlice";
 export default function TopRated(){
-
-    const [topRated, setTopRated] = useState([]);
+    const dispatch = useDispatch()
     useEffect(()=>{
         getTopRated()
     },[])
 
     const getTopRated = async() =>{
      const response = await axios(EndPoint.TOPRATED);
-     setTopRated(response.data.results);
+     dispatch(updateMovie(response.data.results))
     }
 
     return(
     <div>
-        <Movies film={topRated} title={"TOP RATED"} />
+        <Movies title={"TOP RATED"} />
     </div>
     )
 }
